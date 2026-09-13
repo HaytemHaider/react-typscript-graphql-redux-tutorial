@@ -1,0 +1,10 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+# Run `pnpm install` to resolve this manifest. Kept in source so Corepack and
+# pnpm are the repository's explicit package-management contract.
+importers:
+  .: {}
