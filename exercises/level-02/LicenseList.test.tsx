@@ -1,0 +1,3 @@
+import {render,screen} from "@testing-library/react";import {describe,it,expect} from "vitest";import {LicenseList} from "./LicenseList";
+const items=[{id:"1",organizationId:"o",productName:"Camera Station",status:"active" as const,expiresAt:"2027-01-01"},{id:"2",organizationId:"o",productName:"Audio Manager",status:"trial" as const}];
+describe("LicenseList",()=>{it("renders every product and status",()=>{render(<LicenseList licenses={items}/>);expect(screen.getByText("Camera Station")).toBeVisible();expect(screen.getByText(/trial/i)).toBeVisible()});it("only shows an expiry when present",()=>{render(<LicenseList licenses={items}/>);expect(screen.getByText(/2027-01-01/)).toBeVisible();expect(screen.getByText(/no expiry/i)).toBeVisible()})});
